@@ -24,11 +24,23 @@ app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
 
-//app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
+app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
 
 app.get('/login', (req,res)=>{
 	res.render('login')
 });
+ 
+app.post('/login', (req,res)=>{
+	if(req.body.username){
+		req.session.username = req.body.username;
+	res.redirect('/')
+
+	}else{
+		res.redirect('/login')
+	}
+
+});
+
 
 
 open({
@@ -47,7 +59,8 @@ open({
 			totals: pizzas.getGrandTotal(),
 			smallQty: pizzas.getsmallQ(),
 			mediumQty: pizzas.getmedQ(),
-			largeQty: pizzas.getlargeQ()
+			largeQty: pizzas.getlargeQ(),
+			Counter: req.session.Counter
 		});
 	});
 	
@@ -71,6 +84,8 @@ open({
 	})
 	
 })
+
+
 
 // start  the server and start listening for HTTP request on the PORT number specified...
 app.listen(PORT, function() {
