@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect Pizza</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="simple-grid.css">
+</head>
+<body>
+
+<div class="home">
+    <h1>Perfect Pizza</h1>
+    <div class="container piz">
+        <div class="row">
+            <div class="col-12 contact box-model">
+                <h2>Shopping Cart</h2>
+                <table class="table">
+                    <tr>
+                        <form action="/sBuy" method="POST">
+                        <td class="item">
+                            <h3 class="item">Small Pizza</h3>
+                        </td>
+                        <td><button class="smallBtn" type="submit" name="small" value="small">+</button></td>
+                        <td>
+                        </form>
+                            <h3 class="smallQuantity item">{{smallQty}}</h3>
+                        </td>
+                        <td><button class="smallRemove" on type="button" name="remove">-</button></td>
+                        <td>
+                            <h3 class="item">R<span class="smallPizzaTotal">{{smallPizza}}</span></h3>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <form action="/mBuy" method="POST">
+                        <td class="item">
+                            <h3 class="item">Medium Pizza</h3>
+                        </td>
+                        <td><button class="mediumBtn" type="submit" name="medium" value="medium">+</button></td>
+                        <td>
+                            </form>
+                            <h3 class="mediumQuantity">{{mediumQty}}</h3>
+                        </td>
+                        <td><button class="mediumRemove" on type="button" name="remove">-</button></td>
+                        <td>
+                            <h3 class="item">R<span class="medPizzaTotal">{{mediumPizza}}</span></h3>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                            <form action="lBuy" method="POST">
+                        <td>
+                            <h3 class="item">Large Pizza</h3>
+                        </td>
+                        <td><button class="largeBtn" type="submit" name="large" value="large">+</button></td>
+                        <td>
+                        </form>
+                            <h3 class="largeQuantity">{{largeQty}}</h3>
+                        </td>
+                        <td><button class="largeRemove" on type="button" name="remove">-</button></td>
+                        <td>
+                            <h3 class="item">R<span class="largePizzaTotal">{{largePizza}}</span></h3>
+                        </td>
+                    </tr>
+        
+                    <tr>
+                        <td colspan="4">
+                            <h3 class="item">Total Cost</h3>
+                        </td>
+                        <td>
+                            <h3 class="item">R<span class="cartTotal">{{totals}}</span></h3>
+                        </td>
+                    </tr>
+                    <tr>
+                     
+                        <td>
+                              <a href="/orders">Order Pizza</a>
+                            <button class="checkOut" on type="submit" name="orders" value="orders"><i class="glyphicon glyphicon-shopping-cart" style="font-size:20px;"></i></button>
+                        </td>
+                    
+                    </tr>
+                </table>
+            </div>
+            </form>
+      <form action="/sBuy" method="POST">
+          <div class="col-4 small box-model">
+            <h2>Small Pizza</h2>
+            <img src="large.jpg" width="150">
+            <h3>R30.00</h3>
+            <div>
+            Beef, Diced Tomato, Green Pepper
+            </div>
+            <div> 
+                <button class="smallBtn" type="submit" name="small" value="small">Buy</button></div>
+          </div>
+          </form>
+        <form action="/mBuy" method="POST">
+          <div class="col-4 medium box-model">
+            <h2>Med Pizza</h2> 
+            
+            <img src="large.jpg" width="150">
+            <h3>R60.00</h3>
+            <div>
+             Marinara Sauce, Mozzarella Cheese
+             </div>
+             <div> <button class="mediumBtn" type="submit" name="medium" value="medium">Buy</button></div>
+          </div>
+          </form>
+          <form action="lBuy" method="POST">
+          <div class="col-4 large box-model">
+            <h2>Large Pizza</h2> 
+            <img src="large.jpg" width="150">
+            <h3>R90.00</h3>
+            <div>
+            BBQ Sauce, Beef, Beef Sausage
+            </div>
+            <button class="largeBtn" type="submit" name="large" value="large">Buy</button>
+        </div>
+        </form>
+        <div class="col-12 contact box-model">
+            <h2>Contact Details</h2>
+            Contact us at: 011 340 1231 <br>
+                 info@Perfectpizza.co.za
+          </div>
+        </div>
+      </div>
+     <script src="pizza.js"></script>
+     </div>
+</body>
+</html>
