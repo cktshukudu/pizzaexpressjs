@@ -8,7 +8,9 @@
     <meta http-equiv="X-UA-Compatibl
    e" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css" />
     <title>Perfect Pizza</title>
 
     <style>
@@ -42,6 +44,9 @@ form input[type="submit"] {
     margin-top: 2rem;
     padding: 0.4rem;
 }
+.container{
+ border: 1px dotted;
+}
   
     </style>
 </head>
@@ -50,14 +55,16 @@ form input[type="submit"] {
   <form action="/login" method="POST" style="margin:3em">
     <h2>Login</h2> 
     <div class="input-field">
-      <input class="input-field" type="text" id="username"  name="username">
+       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+      <input class="input-field" type="text" id="username"  name="username" placeholder="Please enter Username">
     </div>
     <div class="input-field">
-      <input class="input-field" type="password"  name="password">
+       <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+      <input class="input-field" type="password"  name="password" placeholder="Please enter password">
     </div>
-
-    <button type="submit" value="Login">Login</button>
-
+<div class="input-field">
+    <button type="submit" value="login">Login</button>
+</div>
   </form>
 </div>
 </body>
