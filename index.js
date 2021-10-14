@@ -23,7 +23,6 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-
 app.use(session({ secret: 'keyboard cat', cookie: { maxAge: 60000 }}))
 
 app.get('/login', (req,res)=>{
@@ -41,8 +40,6 @@ app.post('/login', (req,res)=>{
 
 });
 
-
-
 open({
 	
 	filename: './perfect.db',
@@ -59,8 +56,8 @@ open({
 			totals: pizzas.getGrandTotal(),
 			smallQty: pizzas.getsmallQ(),
 			mediumQty: pizzas.getmedQ(),
-			largeQty: pizzas.getlargeQ(),
-			Counter: req.session.Counter
+			largeQty: pizzas.getlargeQ()
+			//Counter: req.session.Counter
 		});
 	});
 	
