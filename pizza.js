@@ -15,33 +15,45 @@ if(menueOption == 'small'){
     totalSmall += 30.00
     totalPizza += 30.00
     sQnty++
-}else{
+}
+}
+
+function srPizza(){
+if(totalSmall > 0 ||sQnty > 0){
     totalSmall -= 30.00
-    totalPizza -= 30.00
+    totalPizza -=30.00
     sQnty--
+}   
 }
-}
+
 function mPizza(menueOption){
     if(menueOption == 'medium'){
         totalMedium += 60.00
         totalPizza += 60.00
         mQnty++
-    }else{
-        totalMedium -= 60.00
-        totalPizza -= 60.00
-        mQnty--
     }
+}
+function mrPizza(){
+    if(totalMedium > 0 ||mQnty > 0){
+        totalMedium -= 60.00
+        totalPizza -=60.00
+        mQnty--
+}
 }
 function lPizza(menueOption){
     if(menueOption == 'large'){
         totalLarge += 90.00
         totalPizza += 90.00
         lQnty++
-    }else{
+    }
+}
+function lrPizza(){
+    if(totalLarge > 0 ||lQnty > 0){
         totalLarge -= 90.00
         totalPizza -= 90.00
-        lQnty-- 
-    }
+        lQnty--
+}
+
 }
 function getTotalSmall(){
     return totalSmall.toFixed(2)
@@ -75,7 +87,9 @@ return{
     sQnty,
     getsmallQ,
     getmedQ,
-    getlargeQ
-    
+    getlargeQ,
+    srPizza,
+    mrPizza,
+    lrPizza
 }
 }

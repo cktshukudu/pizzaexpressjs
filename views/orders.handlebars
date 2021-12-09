@@ -1,23 +1,34 @@
 <div>
 
-	<h2>Pizza Order</h2> 
+	
+<link rel="stylesheet" href="/style.css">
 
+	<form action="/orders" method="post">
+	<div class="dpizza">
+<table class="table">
 
-	<form action="/order" method="POST">
+<h2 style="text-align:center">Pizza Order</h2>
 
-		<div>
-			<label for="">Order Id:</div>label>
-			<input type="text" name="order" value="order">
-		</div>
-		<div>
-			<label for="">Order Status:</label>
-			<input type="text" name="status" value="status">
-		</div>
-		<div>
-			<label for="">Order Amount:</label>
+<tr>
+	<th>Order Number</th>
+	<th>Quantity</th>
+	<th>Status</th>
+	<th>Total</th>
+</tr>
+ {{#each perfect}}
+<tr>
+	<td>{{id}}</td>
+	<td>{{smallQty}}</td>
+	<td>Payment due</td>
+	<td>R{{totals}}</td>
+	
+</tr>
+</form>
+{{/each}}
+</table>
+</div>
+</table>
+</div>
 
-			<input type="text" name="amount" value="amount">
-		</div>
-	</form>
 
 </div>
